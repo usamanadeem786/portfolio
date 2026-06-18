@@ -1,6 +1,7 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import MDXComponents from '@/components/MDX'
+import { Analytics } from '@vercel/analytics/next'
 import '@/styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +9,12 @@ function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    <MDXProvider components={MDXComponents}>{getLayout(<Component {...pageProps} />)}</MDXProvider>
+    <>
+      <MDXProvider components={MDXComponents}>
+        {getLayout(<Component {...pageProps} />)}
+      </MDXProvider>
+      <Analytics />
+    </>
   )
 }
 
