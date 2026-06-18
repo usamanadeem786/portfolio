@@ -10,7 +10,7 @@ seo:
 ---personal_info
 name: Usama Bin Nadeem
 images:
-  - src: /about.jpg
+  - src: /about.jpeg
     alt: my image
 ---
 ##### <span>01.</span> About me
