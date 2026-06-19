@@ -39,7 +39,7 @@ Throughout my professional journey, I have worked on AI chatbots, inventory mana
 
 ---cta
 ---
-<Button href="/Usama-CV-Resume.pdf" download="Usama_CV_Resume.pdf" size="lg">
+<Button href="/Usama-CV-Resume.pdf" size="lg">
   Download Resume
 </Button>
 
