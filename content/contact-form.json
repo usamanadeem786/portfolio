@@ -1,0 +1,199 @@
+[
+  {
+    "legend": "Your contact information",
+    "columns": 3,
+    "fields": [
+      {
+        "type": "text",
+        "name": "first-name",
+        "placeholder": "First name",
+        "autoComplete": "given-name",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "last-name",
+        "placeholder": "Last name",
+        "autoComplete": "family-name",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "email",
+        "placeholder": "Email address",
+        "autoComplete": "email",
+        "inputType": "email",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "company",
+        "placeholder": "Company Name",
+        "autoComplete": "company"
+      },
+      {
+        "type": "text",
+        "name": "phone",
+        "placeholder": "Phone Number",
+        "autoComplete": "phone"
+      },
+      {
+        "type": "select",
+        "name": "country",
+        "autoComplete": "country-name",
+        "defaultValue": "Select Country",
+        "options": [
+          {
+            "label": "Select Country",
+            "value": "",
+            "disabled": true
+          },
+          {
+            "label": "Malaysia",
+            "value": "Malaysia"
+          },
+          {
+            "label": "Pakistan",
+            "value": "Pakistan"
+          },
+          {
+            "label": "United Kingdom",
+            "value": "United Kingdom"
+          },
+          {
+            "label": "United States",
+            "value": "United States"
+          },
+          {
+            "label": "Canada",
+            "value": "Canada"
+          },
+          {
+            "label": "Germany",
+            "value": "Germany"
+          },
+          {
+            "label": "France",
+            "value": "France"
+          },
+          {
+            "label": "Other",
+            "value": "Other"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "legend": "Technologies Required",
+    "columns": 3,
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "technologies[Python]",
+        "label": "Python"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[FastAPI]",
+        "label": "FastAPI"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Django]",
+        "label": "Django"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Flask]",
+        "label": "Flask"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Streamlit]",
+        "label": "Streamlit"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[PostgresSQL]",
+        "label": "PostgresSQL"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[MySQL]",
+        "label": "MySQL"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[MongoDB]",
+        "label": "MongoDB"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[SQLite]",
+        "label": "SQLite"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[BeautifulSoup / Selenium]",
+        "label": "BeautifulSoup / Selenium"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Shopify]",
+        "label": "Shopify"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Wordpress]",
+        "label": "Wordpress"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[AI / Machine Learning]",
+        "label": "AI / Machine Learning"
+      },
+      {
+        "type": "checkbox",
+        "name": "technologies[Other]",
+        "label": "Other"
+      }
+    ]
+  },
+  {
+    "legend": "Work Location",
+    "columns": 3,
+    "fields": [
+      {
+        "type": "radio",
+        "name": "Work Location",
+        "value": "Onsite",
+        "label": "Onsite"
+      },
+      {
+        "type": "radio",
+        "name": "Work Location",
+        "value": "Remote",
+        "label": "Remote"
+      },
+      {
+        "type": "radio",
+        "name": "Work Location",
+        "value": "Hybrid",
+        "label": "Hybrid"
+      }
+    ]
+  },
+  {
+    "legend": "Tell me about the opportunity, the role, your company, project requirements, technologies, timeline, and anything else you'd like me to know.",
+    "columns": 1,
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "message",
+        "placeholder": "Job description",
+        "rows": 3
+      }
+    ]
+  }
+]
