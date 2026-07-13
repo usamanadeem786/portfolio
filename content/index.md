@@ -1,8 +1,8 @@
 ---
 layout: Home
 seo:
-  title: Web Developer
-  description: Custom description for this page goes here
+  title: Usama Nadeem | Web Developer
+  description: Portfolio of Usama Nadeem, a Python Developer specializing in FastAPI, Django, Flask, web scraping, automation, AI, and custom software solutions.
 ---
 
 ---main
@@ -53,7 +53,7 @@ list:
       src: /icons/logo-1.svg
   - name: Company 2
     icon:
-      src: /icons/logo-3.svg
+      src: /icons/logo-2.svg
   - name: Company 3
     icon:
       src: /icons/logo-3.svg

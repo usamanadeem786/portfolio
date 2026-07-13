@@ -7,9 +7,9 @@ seo:
 
 ---github
 repositories:
-  - leerob/leerob.io
-  - jxnblk/mdx-deck
-  - vercel/og-image
+  - usamanadeem786/Gender-Detection-master
+  - usamanadeem786/Blogging-app
+  - usamanadeem786/ACI-Main
 ---
 
 <PageTitle>
