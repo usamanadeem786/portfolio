@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import classNames from 'clsx'
 import ContentRenderer from '@/components/ContentRenderer'
 import Image from '@/components/Image'
@@ -7,6 +8,9 @@ import Reveal from '@/components/Reveal'
 import Companies from '@/components/Companies'
 import ProjectCardFeatured from '@/components/ProjectCardFeatured'
 import RepositoryCardFeatured from '@/components/RepositoryCardFeatured'
+import { SlUser, SlTrophy, SlEnvolope } from 'react-icons/sl'
+import { IoMailOutline } from 'react-icons/io5'
+import { social, siteMetaData } from '../theme.config'
 
 const HeroPhoto = ({ main }) => (
   <>
@@ -134,6 +138,70 @@ const OpenSourceProjects = ({ githubTitle, github }) => {
   )
 }
 
+const quickLinks = [
+  { name: 'About Me', href: '/about', Icon: SlUser },
+  { name: 'Projects', href: '/projects', Icon: SlTrophy },
+  { name: 'Contact', href: '/contact', Icon: SlEnvolope },
+]
+
+const ClosingCta = ({ closing }) => {
+  if (!closing?.content) return null
+
+  return (
+    <div className="mt-16 md:mt-24">
+      <Sep line />
+      <Reveal
+        animation="fade-in slide-in-top"
+        className="mt-8 bg-gradient-omega-900 p-6 shadow-2xl md:mt-12 md:p-10"
+      >
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="prose prose-invert max-w-xl">
+            <ContentRenderer source={closing} />
+            <div className="not-prose mt-6 flex flex-wrap gap-3">
+              {quickLinks.map(({ name, href, Icon }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  className="inline-flex items-center gap-2 bg-omega-800 px-4 py-2.5 text-sm font-medium text-white no-underline transition-colors hover:bg-omega-700"
+                >
+                  <Icon className="h-4 w-4" />
+                  {name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col items-start gap-4 md:items-end">
+            <div className="flex gap-3">
+              {[...social].reverse().map(({ name, url, Icon }) => (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={name}
+                  className="flex h-11 w-11 items-center justify-center bg-omega-800 text-white transition-colors hover:bg-omega-700"
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
+              <a
+                href={`mailto:${siteMetaData.email}`}
+                aria-label="Email"
+                className="flex h-11 w-11 items-center justify-center bg-accent text-white transition-colors hover:bg-accent-600"
+              >
+                <IoMailOutline className="h-5 w-5" />
+              </a>
+            </div>
+            <span className="text-sm text-omega-400">
+              {siteMetaData.authorName} &copy; {new Date().getFullYear()}
+            </span>
+          </div>
+        </div>
+      </Reveal>
+    </div>
+  )
+}
+
 const Layout = ({
   main = {},
   cta = {},
@@ -142,6 +210,7 @@ const Layout = ({
   projects,
   githubTitle,
   github,
+  closing,
 }) => (
   <div className="mx-auto my-auto w-full min-w-0 p-4 md:p-10 lg:p-20">
     <div className="items-center text-center md:flex md:text-left">
@@ -161,6 +230,7 @@ const Layout = ({
     </div>
     <FeaturedProjects companies={companies} projects={projects} />
     <OpenSourceProjects githubTitle={githubTitle} github={github} />
+    <ClosingCta closing={closing} />
   </div>
 )
 

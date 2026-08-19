@@ -91,3 +91,10 @@ repositories:
 <Button href="https://github.com/usamanadeem786" variant="secondary" size="lg">
   View GitHub Profile
 </Button>
+
+---closing
+---
+
+### Ready to start your next project?
+
+Let's discuss how we can bring your ideas to life with cutting-edge technology.
