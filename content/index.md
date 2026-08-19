@@ -39,7 +39,7 @@ Throughout my professional journey, I have worked on AI chatbots, inventory mana
 
 ---cta
 ---
-<Button href="/Usama-CV-Resume.pdf" size="lg">
+<Button href="/Usama-CV-Resume.pdf" download="Usama-Nadeem-CV.pdf" size="lg">
   Download Resume
 </Button>
 
@@ -48,16 +48,46 @@ Throughout my professional journey, I have worked on AI chatbots, inventory mana
 ---companies
 title: Trusted By
 list:
-  - name: Company 1
+  - name: Blagle
+    href: https://blagle.com
     icon:
-      src: /icons/logo-1.svg
-  - name: Company 2
+      src: /icons/blagle-logo.png
+  - name: InvoZone
+    href: https://invozone.com
     icon:
-      src: /icons/logo-2.svg
-  - name: Company 3
-    icon:
-      src: /icons/logo-3.svg
-  - name: Company 4
-    icon:
-      src: /icons/logo-4.svg
+      src: /icons/invozone-logo.svg
 ---
+
+
+## Featured *Projects*
+
+Explore some of my latest software engineering projects built with modern technologies including Python, FastAPI, Django, Flask, PostgreSQL, Shopify, AI, Machine Learning, and automation. From enterprise web applications to intelligent automation systems, each project reflects my passion for creating scalable, efficient, and user-focused solutions.
+
+---projects
+collection:
+  path: /projects
+  sortBy: date
+  limit: 6
+---
+
+<Button href="/projects" variant="secondary" size="lg">
+  View All Projects
+</Button>
+
+---githubTitle
+---
+
+## My *Open-Source* Projects
+
+Discover some of my most popular open-source projects on GitHub. Click any project to view the source code directly on the repository.
+
+---github
+repositories:
+  - usamanadeem786/Gender-Detection-master
+  - usamanadeem786/Blogging-app
+  - usamanadeem786/ACI-Main
+---
+
+<Button href="https://github.com/usamanadeem786" variant="secondary" size="lg">
+  View GitHub Profile
+</Button>

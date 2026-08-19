@@ -50,34 +50,55 @@ list:
 
 
 ---skills[0]
-title: Back-End Development
+title: Backend Development
 list:
   - title: Python
     level: 5
     icon:
-      src: /icons/nodedotjs.svg
+      src: /icons/python.svg
+  - title: Streamlit
+    level: 4
+    icon:
+      src: /icons/streamlit.svg
+  - title: Flask
+    level: 3
+    icon:
+      src: /icons/flask.svg
+  - title: Django
+    level: 3
+    icon:
+      src: /icons/django.svg
+  - title: FastAPI
+    level: 3
+    icon:
+      src: /icons/fastapi.svg
+  - title: NumPy
+    level: 2
+    icon:
+      src: /icons/numpy.svg
+  - title: Pandas
+    level: 2
+    icon:
+      src: /icons/pandas.svg
 ---
 
 
 
 ---skills[1]
-########################################
-### Skills
-########################################
 title: Front-End UI/UX Design
 list:
   - title: HTML
     level: 4
     icon:
-      src: /icons/javascript.svg
+      src: /icons/html5.svg
   - title: CSS
     level: 4
     icon:
-      src: /icons/react.svg
+      src: /icons/css3.svg
   - title: JavaScript
     level: 3
     icon:
-      src: /icons/redux.svg
+      src: /icons/javascript.svg
   - title: Node.js
     level: 1
     icon:
@@ -86,121 +107,78 @@ list:
 
 
 ---skills[2]
-title: Back-End Development
-list:
-  - title: Streamlit
-    level: 4
-    icon:
-      src: /icons/nodedotjs.svg
-  - title: Fkask
-    level: 3
-    icon:
-      src: /icons/prisma.svg
-  - title: Django
-    level: 3
-    icon:
-      src: /icons/svelte.svg
-  - title: FastAPI
-    level: 3
-    icon:
-      src: /icons/html5.svg
-  - title: Numpy
-    level: 2
-    icon:
-      src: /icons/solidity.svg
-  - title: Pandas
-    level: 2
-    icon:
-      src: /icons/solidity.svg
----
-
-
-
----skills[3]
-########################################
-### Skills
-########################################
 title: CMS
 list:
-  - title: Wordpress
+  - title: WordPress
     level: 5
     icon:
-      src: /icons/javascript.svg
+      src: /icons/wordpress.svg
   - title: Shopify
     level: 4
     icon:
-      src: /icons/react.svg
+      src: /icons/shopify.svg
 ---
 
 
----skills[4]
-########################################
-### Skills
-########################################
+---skills[3]
 title: Database Management
 list:
   - title: SQLite
     level: 5
     icon:
-      src: /icons/javascript.svg
-  - title: Mysql
+      src: /icons/sqlite.svg
+  - title: MySQL
     level: 4
     icon:
-      src: /icons/react.svg
+      src: /icons/mysql.svg
+  - title: PostgreSQL
+    level: 3
+    icon:
+      src: /icons/postgresql.svg
   - title: MongoDB
     level: 2
     icon:
-      src: /icons/react.svg
-  - title: PostgresSQL
-    level: 3
-    icon:
-      src: /icons/react.svg
+      src: /icons/mongodb.svg
 ---
 
 
----skills[5]
-########################################
-### Skills
-########################################
+---skills[4]
 title: Web Scraping
 list:
+  - title: BeautifulSoup
+    level: 4
+    icon:
+      src: /icons/python.svg
   - title: Selenium
     level: 3
     icon:
-      src: /icons/javascript.svg
-  - title: Beautiful Soap
-    level: 4
-    icon:
-      src: /icons/react.svg
+      src: /icons/selenium.svg
   - title: Scrapy
     level: 2
     icon:
-      src: /icons/react.svg
+      src: /icons/python.svg
 ---
 
 
 ---skills[5]
-########################################
-### Skills
-########################################
 title: Additional Tools
 list:
-  - title: linix
-    level: 4
-    icon:
-      src: /icons/javascript.svg
-  - title: Github
-    level: 4
-    icon:
-      src: /icons/react.svg
-  - title: VSCode
+  - title: VS Code
     level: 5
     icon:
-      src: /icons/react.svg
-  - title: Gitlab
+      src: /icons/vscode.svg
+  - title: Linux
+    level: 4
+    icon:
+      src: /icons/linux.svg
+  - title: GitHub
+    level: 4
+    icon:
+      src: /icons/github.svg
+  - title: GitLab
     level: 2
     icon:
-      src: /icons/react.svg
+      src: /icons/gitlab.svg
 ---
 
 

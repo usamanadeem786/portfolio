@@ -5,6 +5,8 @@ import Image from '@/components/Image'
 import Sep from '@/components/Sep'
 import Reveal from '@/components/Reveal'
 import Companies from '@/components/Companies'
+import ProjectCardFeatured from '@/components/ProjectCardFeatured'
+import RepositoryCardFeatured from '@/components/RepositoryCardFeatured'
 
 const HeroPhoto = ({ main }) => (
   <>
@@ -78,7 +80,65 @@ const Achievements = ({ achievements }) => (
   </Reveal>
 )
 
-const Layout = ({ main = {}, cta = {}, achievements = [], companies }) => (
+const FeaturedProjects = ({ companies, projects }) => (
+  <div className="mt-16 md:mt-24">
+    <Reveal
+      animation="fade-in slide-in-top"
+      className="prose prose-invert mx-auto max-w-2xl text-center"
+    >
+      <ContentRenderer source={companies} />
+    </Reveal>
+    <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
+      {projects?.collection?.records?.map((item, i) => (
+        <Reveal key={item.slug.join('/')} animation="fade-in slide-in-top" delay={i * 100}>
+          <ProjectCardFeatured index={i} {...item} />
+        </Reveal>
+      ))}
+    </div>
+    <div className="prose prose-invert mt-8 text-center md:mt-12">
+      <ContentRenderer source={projects} />
+    </div>
+  </div>
+)
+
+const OpenSourceProjects = ({ githubTitle, github }) => {
+  if (!github?.repositories?.records?.length) return null
+
+  return (
+    <div className="mt-16 md:mt-24">
+      <Reveal
+        animation="fade-in slide-in-top"
+        className="prose prose-invert mx-auto max-w-2xl text-center"
+      >
+        <ContentRenderer source={githubTitle} />
+      </Reveal>
+      <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
+        {github.repositories.records.map((item, i) => (
+          <Reveal
+            key={`${item.owner}/${item.name}`}
+            animation="fade-in slide-in-top"
+            delay={i * 100}
+          >
+            <RepositoryCardFeatured index={i} {...item} />
+          </Reveal>
+        ))}
+      </div>
+      <div className="prose prose-invert mt-8 text-center md:mt-12">
+        <ContentRenderer source={github} />
+      </div>
+    </div>
+  )
+}
+
+const Layout = ({
+  main = {},
+  cta = {},
+  achievements = [],
+  companies,
+  projects,
+  githubTitle,
+  github,
+}) => (
   <div className="mx-auto my-auto p-4 md:p-10 lg:p-20">
     <div className="items-center text-center md:flex md:text-left">
       <div className="inline-block shrink-0 md:order-2 md:-ml-40">
@@ -95,6 +155,8 @@ const Layout = ({ main = {}, cta = {}, achievements = [], companies }) => (
     <div className="mt-6 mt-12 hidden px-4 md:block">
       <Companies {...companies} />
     </div>
+    <FeaturedProjects companies={companies} projects={projects} />
+    <OpenSourceProjects githubTitle={githubTitle} github={github} />
   </div>
 )
 

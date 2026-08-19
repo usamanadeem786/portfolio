@@ -5,6 +5,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   images: {
     deviceSizes: [428, 540, 640, 768, 1024, 1120],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+      },
+    ],
   },
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'utils'],
