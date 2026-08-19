@@ -201,6 +201,9 @@ list:
 ---history[1]
 title: Education
 list:
+  - name: Universiti Sains Islam Malaysia
+    description: MASTER OF COMPUTER SCIENCE (INFORMATION SECURITY AND ASSURANCE)
+    date: Sep 2016 - Mar 2028
   - name: University of Management and Technology, Sialkot
     description: Bachelor of Science in Computer Engineering
     date: 2019-2023
