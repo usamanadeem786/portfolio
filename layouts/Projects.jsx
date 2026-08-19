@@ -17,11 +17,17 @@ const Layout = ({ projects, github }) => {
         </div>
         <div className="my-6 md:my-12"></div>
         <ContentRenderer source={projects} />
-        <div className="mt-4 grid gap-4 md:mt-12 md:gap-6">
-          {projects?.collection?.records?.map((item, i) => (
-            <ProjectCardHorizontal key={item.slug} index={i} {...item} />
-          ))}
-        </div>
+        {projects?.collection?.records?.length ? (
+          <div className="mt-4 grid gap-4 md:mt-12 md:gap-6">
+            {projects.collection.records.map((item, i) => (
+              <ProjectCardHorizontal key={item.slug} index={i} {...item} />
+            ))}
+          </div>
+        ) : (
+          <p className="mt-4 text-omega-400 md:mt-12">
+            Client case studies are being prepared and will be published here soon.
+          </p>
+        )}
       </div>
     </div>
   )

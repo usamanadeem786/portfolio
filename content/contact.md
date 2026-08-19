@@ -2,7 +2,7 @@
 layout: Contact
 seo:
   title: Contact Me
-  description: Custom description for this page goes here
+  description: Get in touch with Usama Bin Nadeem for backend development, AI, and automation projects. Reach out by email, phone, LinkedIn, or GitHub.
 ---
 
 
@@ -29,5 +29,5 @@ Feel free to reach out using the form below, and I'll respond as soon as I can.
 
   <Icon src="/icons/logo-linkedin.svg" className="mr-2 inline align-middle fill-current text-omega-500" /> Linkedin: [UsamaNadeem](https://www.linkedin.com/in/usama-nadeem-853749269/)
 
-  <Icon src="/icons/logo-twitter.svg" className="mr-2 inline align-middle fill-current text-omega-500" /> Github: [@Usamanadeem786](https://github.com/usamanadeem786)
+  <Icon src="/icons/github.svg" className="mr-2 inline align-middle fill-current text-omega-500" /> Github: [@Usamanadeem786](https://github.com/usamanadeem786)
 </small>

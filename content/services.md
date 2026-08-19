@@ -1,8 +1,8 @@
 ---
 layout: Services
 seo:
-  title: Web Development Services
-  description: Custom description for this page goes here
+  title: Software Development Services
+  description: Backend development, AI-powered applications, automation, and e-commerce customization services from Usama Bin Nadeem, a Python and backend software engineer.
 ---
 
 
@@ -18,20 +18,13 @@ seo:
 
 ###### Solving problems
 
-I design products that are more than pretty. I make them shippable and usable.
-Et tempor non mollit dolor et do aute voluptate ea ullamco.
+I help businesses turn ideas into reliable, production-ready software. From backend systems and APIs to AI-powered tools and automation, I focus on solutions that are scalable, maintainable, and built to deliver real value.
 
 ###### What you can expect
 
-- Design Strategy
-- Web and Mobile App Design
-- Front-end Development
-
-###### Applications I'm fluent in
-
-- Design Strategy
-- Web and Mobile App Design
-- Front-end Development
+- Clean, well-tested, maintainable code
+- Clear communication throughout the project
+- Solutions built around your actual business needs
 
 <Sep size="12" />
 
@@ -42,69 +35,65 @@ Et tempor non mollit dolor et do aute voluptate ea ullamco.
 
 
 ---services[0]
-title: Web and Mobile App Design
+title: Backend Development & APIs
 icon:
-  src: /icons/mobile-app.svg
+  src: /icons/python.svg
 ---
 
 <small>
-  Defining the problem, identifying the scope and finally, organizing. Et tempor non mollit dolor et
-  do aute voluptate ea ullamco culpa pariatur.
+  Scalable backend systems and RESTful APIs built with Python, FastAPI, Django, and Flask, backed by PostgreSQL or MySQL.
 
-    - <strong>Design Strategy</strong>
-    - <strong>Web and Mobile App Design</strong>
-    - <strong>Front-end Development</strong>
+    - <strong>REST API Design & Development</strong>
+    - <strong>Database Design & Optimization</strong>
+    - <strong>Authentication & Authorization Systems</strong>
 
 </small>
 
 
 
 ---services[1]
-title: Project Strategy & Development
+title: AI & Automation Solutions
 icon:
-  src: /icons/prisma.svg
+  src: /icons/fastapi.svg
 ---
 
 <small>
-  Defining the problem, identifying the scope and finally, organizing. Et tempor non mollit dolor et
-  do aute voluptate ea ullamco culpa pariatur.
+  AI-powered applications and business automation tools that cut down manual work and add intelligence to your product.
 
-    - <strong>Design Strategy</strong>
-    - <strong>Web and Mobile App Design </strong>
-    - <strong>Front-end Development</strong>
+    - <strong>AI Chatbots & Assistants</strong>
+    - <strong>Machine Learning Integrations</strong>
+    - <strong>Business Process Automation</strong>
 
 </small>
 
 
 
 ---services[2]
-title: UI/UX Design & Optimization
+title: Web Scraping & Data Solutions
 icon:
-  src: /icons/dashboard.svg
+  src: /icons/selenium.svg
 ---
 
 <small>
-  Defining the problem, identifying the scope and finally, organizing. Et tempor non mollit dolor et
-  do aute voluptate ea ullamco culpa pariatur.
+  Reliable data extraction and processing pipelines for research, monitoring, and lead-generation use cases.
 
-    - <strong>Design Strategy</strong>
-    - <strong>Web and Mobile App Design</strong>
-    - <strong>Front-end Development</strong>
+    - <strong>Web Scraping with Selenium & BeautifulSoup</strong>
+    - <strong>Email Verification Systems</strong>
+    - <strong>Data Cleaning & Processing Pipelines</strong>
 </small>
 
 
 
 ---services[3]
-title: Application Audit & Debugging
+title: E-commerce & CMS Customization
 icon:
-  src: /icons/audit.svg
+  src: /icons/shopify.svg
 ---
 
 <small>
-  Defining the problem, identifying the scope and finally, organizing. Et tempor non mollit dolor et
-  do aute voluptate ea ullamco culpa pariatur.
+  Custom storefronts, inventory tooling, and CMS work on Shopify and WordPress tailored to how your business actually operates.
 
-  - <strong>Design Strategy </strong>
-  - <strong>Web and Mobile App Design </strong>
-  - <strong>Front-end Development</strong>
+  - <strong>Shopify Theme & App Customization</strong>
+  - <strong>WordPress Development</strong>
+  - <strong>Inventory Management Systems</strong>
 </small>

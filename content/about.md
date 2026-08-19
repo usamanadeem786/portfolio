@@ -2,7 +2,7 @@
 layout: About
 seo:
   title: About Me
-  description: Custom description for this page goes here
+  description: Learn more about Usama Bin Nadeem, a Python and backend software engineer specializing in FastAPI, Django, Flask, AI-powered applications, and automation.
 ---
 
 

@@ -27,7 +27,7 @@ const CompanyLogo = ({ name, href, icon }) => {
 
 const Companies = ({ title, list }) => (
   <div className="flex h-12 flex-wrap items-center justify-between gap-x-10 gap-y-6">
-    {title && <h4 className="mb-4 w-full lg:mb-0 lg:w-auto">{title}</h4>}
+    {title && <h4 className="mb-4 w-full text-white lg:mb-0 lg:w-auto">{title}</h4>}
     {list &&
       list.map((item, i) => (
         <Reveal key={item.name || i} animation="fade-in zoom-in" delay={i * 250} className="group">

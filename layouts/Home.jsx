@@ -80,26 +80,30 @@ const Achievements = ({ achievements }) => (
   </Reveal>
 )
 
-const FeaturedProjects = ({ companies, projects }) => (
-  <div className="mt-16 md:mt-24">
-    <Reveal
-      animation="fade-in slide-in-top"
-      className="prose prose-invert mx-auto max-w-2xl text-center"
-    >
-      <ContentRenderer source={companies} />
-    </Reveal>
-    <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
-      {projects?.collection?.records?.map((item, i) => (
-        <Reveal key={item.slug.join('/')} animation="fade-in slide-in-top" delay={i * 100}>
-          <ProjectCardFeatured index={i} {...item} />
-        </Reveal>
-      ))}
+const FeaturedProjects = ({ companies, projects }) => {
+  if (!projects?.collection?.records?.length) return null
+
+  return (
+    <div className="mt-16 md:mt-24">
+      <Reveal
+        animation="fade-in slide-in-top"
+        className="prose prose-invert mx-auto max-w-2xl text-center"
+      >
+        <ContentRenderer source={companies} />
+      </Reveal>
+      <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
+        {projects.collection.records.map((item, i) => (
+          <Reveal key={item.slug.join('/')} animation="fade-in slide-in-top" delay={i * 100}>
+            <ProjectCardFeatured index={i} {...item} />
+          </Reveal>
+        ))}
+      </div>
+      <div className="prose prose-invert mt-8 text-center md:mt-12">
+        <ContentRenderer source={projects} />
+      </div>
     </div>
-    <div className="prose prose-invert mt-8 text-center md:mt-12">
-      <ContentRenderer source={projects} />
-    </div>
-  </div>
-)
+  )
+}
 
 const OpenSourceProjects = ({ githubTitle, github }) => {
   if (!github?.repositories?.records?.length) return null

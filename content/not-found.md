@@ -2,7 +2,7 @@
 layout: 'BlankCenter'
 seo:
   title: 404 Not Found
-  description: Custom description for this page goes here
+  description: The page you're looking for doesn't exist.
 ---
 
 #### <span>Oops!</span>
@@ -12,6 +12,4 @@ seo:
 
 The page you were looking for does not exist.
 
-<Button href="/contact" size="sm">Go Back to Home</Button>
-
-or checkout [my blog](/blog)
+<Button href="/" size="sm">Go Back to Home</Button>

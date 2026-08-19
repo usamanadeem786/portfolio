@@ -1,8 +1,8 @@
 ---
 layout: Projects
 seo:
-  title: Web Development Projects
-  description: Custom description for this page goes here
+  title: Projects
+  description: A selection of backend, AI, and automation projects by Usama Bin Nadeem, along with his open-source work on GitHub.
 ---
 
 ---github
@@ -27,7 +27,5 @@ collection:
 ---
 
 <PageTitle>
-  ### Latest Projects
+  ### Client Projects
 </PageTitle>
-
-I have transformed ideas into remarkable digital products.
