@@ -112,6 +112,7 @@ module.exports = {
         blink: 'blink-caret .75s steps(17, end) infinite',
         typewriter: 'typing 2s steps(30, end)',
         'spin-slow': 'spin 5s linear infinite',
+        marquee: 'marquee 20s linear infinite',
       },
       keyframes: {
         'fade-in': {
@@ -128,6 +129,10 @@ module.exports = {
         },
         'blink-caret': {
           '50%': { opacity: 0 },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

@@ -143,7 +143,7 @@ const Layout = ({
   githubTitle,
   github,
 }) => (
-  <div className="mx-auto my-auto p-4 md:p-10 lg:p-20">
+  <div className="mx-auto my-auto w-full min-w-0 p-4 md:p-10 lg:p-20">
     <div className="items-center text-center md:flex md:text-left">
       <div className="inline-block shrink-0 md:order-2 md:-ml-40">
         <HeroPhoto main={main} />
@@ -156,7 +156,7 @@ const Layout = ({
         </div>
       </div>
     </div>
-    <div className="mt-6 mt-12 hidden px-4 md:block">
+    <div className="mt-10 px-4 md:mt-12">
       <Companies {...companies} />
     </div>
     <FeaturedProjects companies={companies} projects={projects} />
