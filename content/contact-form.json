@@ -115,8 +115,8 @@
       },
       {
         "type": "checkbox",
-        "name": "technologies[PostgresSQL]",
-        "label": "PostgresSQL"
+        "name": "technologies[PostgreSQL]",
+        "label": "PostgreSQL"
       },
       {
         "type": "checkbox",

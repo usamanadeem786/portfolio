@@ -1,10 +1,10 @@
 {
-  "name": "next-theme-edgefolio",
+  "name": "usama-nadeem-portfolio",
   "version": "1.1.2",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElegantStack/edgefolio.git"
+    "url": "https://github.com/usamanadeem786/portfolio.git"
   },
   "engines": {
     "node": ">=14.0"
