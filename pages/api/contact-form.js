@@ -4,58 +4,8 @@
  ****************************************************************/
 
 import { config, siteMetaData } from '../../theme.config'
-
-const getBrevoApiKey = () => {
-  const rawKey = process.env.BREVO_API_KEY || process.env.SENDGRID_API_KEY || ''
-  return rawKey
-    .replace(/^SG\./, '')
-    .replace(/^=+\s*/, '')
-    .trim()
-}
-
-const getHtmlBody = (body) => {
-  return Object.entries(body).map(([key, value]) => {
-    if (typeof value === 'string') {
-      return `<b>${key}</b>: ${value}`
-    }
-    if (typeof value === 'boolean') {
-      return value === true ? key : false
-    }
-    if (typeof value === 'object' && value !== null) {
-      return `<b>${key}</b>: ${getHtmlBody(value)?.filter(Boolean).join(', ')}`
-    }
-    return null
-  })
-}
-
-const sendEmailViaBrevo = async ({ to, from, replyTo, subject, html }) => {
-  const apiKey = getBrevoApiKey()
-
-  if (!apiKey) {
-    throw new Error('Missing email API key. Set BREVO_API_KEY in your .env file.')
-  }
-
-  const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: {
-      'api-key': apiKey,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      sender: { email: from, name: siteMetaData?.siteName || 'Portfolio Contact' },
-      to: [{ email: to }],
-      replyTo: { email: replyTo },
-      subject,
-      htmlContent: html,
-    }),
-  })
-
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}))
-    throw new Error(error.message || `Email request failed (${response.status})`)
-  }
-}
+import { sendEmail } from '../../lib/mailer'
+import { buildAdminNotificationEmail, buildConfirmationEmail } from '../../lib/email-templates'
 
 const contact = async (req, res) => {
   if (req.method !== 'POST') {
@@ -63,7 +13,9 @@ const contact = async (req, res) => {
   }
 
   const { email } = req.body
-  const { recipient, sender, subject } = config.contactForm || {}
+  const firstName = req.body['first-name']
+  const lastName = req.body['last-name']
+  const { recipient, sender } = config.contactForm || {}
 
   if (!recipient) {
     return res
@@ -81,21 +33,37 @@ const contact = async (req, res) => {
       .json({ error: 'Missing email address. Please provide a correct email address.' })
   }
 
-  let html = getHtmlBody(req.body)
-  if (Array.isArray(html)) {
-    html = html.filter(Boolean).join('<br />')
-  }
+  const submitterName = [firstName, lastName].filter(Boolean).join(' ')
 
+  // 1. Notify the site owner with the submitted details. This is the
+  // primary purpose of the form, so a failure here fails the request.
   try {
-    await sendEmailViaBrevo({
+    await sendEmail({
       to: recipient,
       from: sender,
       replyTo: email,
-      subject: req.body.subject || subject || 'Contact form entry',
-      html,
+      subject: submitterName
+        ? `New inquiry from ${submitterName} via portfolio`
+        : 'New contact form submission',
+      html: buildAdminNotificationEmail(req.body),
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
+  }
+
+  // 2. Send the visitor an auto-reply confirming receipt. This is a nice-to-have,
+  // so it shouldn't fail the whole request if it errors out.
+  try {
+    await sendEmail({
+      to: email,
+      toName: submitterName || undefined,
+      from: sender,
+      fromName: siteMetaData?.authorName,
+      subject: `Thanks for reaching out${firstName ? `, ${firstName}` : ''}!`,
+      html: buildConfirmationEmail({ firstName }),
+    })
+  } catch (error) {
+    console.error('Failed to send contact form confirmation email:', error.message)
   }
 
   return res.status(201).json({ error: '' })
