@@ -1,18 +1,18 @@
 ---
 layout: Blog
 seo:
-  title: My Blog
-  description: Custom description for this page goes here
+  title: Blog
+  description: Articles by Usama Bin Nadeem on Python, backend development, AI-assisted engineering, and software development.
 collection:
   path: /blog
   sortBy: date
-  recordsPerPage: 9
+  recordsPerPage: 50
   infinitePaging: true
 ---
 
 ### Latest Articles
 
-A few handcrafted articles about my thoughts and experiments.
+Thoughts and write-ups on backend development, Python, and AI-assisted engineering.
 
 
 
@@ -24,4 +24,4 @@ collection:
 
 ### Categories
 
-<small>I write about web development and modern JavaScript frameworks.</small>
+<small>Browse articles by topic below.</small>

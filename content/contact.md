@@ -23,7 +23,7 @@ Feel free to reach out using the form below, and I'll respond as soon as I can.
 <Sep size="12" />
 
 <small>
-  <Icon src="/icons/call.svg" className="inline mr-2 align-middle fill-current text-omega-500" /> Phone: [(+92) 336-2817890](https://wa.me/923362817890)
+  <Icon src="/icons/whatsapp.svg" className="inline mr-2 align-middle fill-current text-omega-500" /> WhatsApp: [+92 336 2817890](https://wa.me/923362817890?text=Hi%20Usama%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch.)
 
   <Icon src="/icons/mail.svg" className="mr-2 inline align-middle fill-current text-omega-500" /> Email: usamanadeem7866@gmail.com
 

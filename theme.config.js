@@ -6,9 +6,21 @@
  * Icons from react-icons: https://react-icons.github.io/react-icons
  */
 
-import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5'
-import { TfiHome } from 'react-icons/tfi'
+import { IoLogoLinkedin, IoLogoGithub, IoLogoWhatsapp } from 'react-icons/io5'
+import { TfiHome, TfiPencilAlt } from 'react-icons/tfi'
 import { SlUser, SlBriefcase, SlEnvolope, SlTrophy } from 'react-icons/sl'
+
+/**
+ * WhatsApp contact link, shared across the header, contact page, and
+ * the homepage closing CTA.
+ */
+
+export const whatsapp = {
+  number: '923362817890',
+  url: 'https://wa.me/923362817890?text=' + encodeURIComponent(
+    "Hi Usama, I found your portfolio and would like to get in touch."
+  ),
+}
 
 /**
  * Main Menu Items
@@ -37,6 +49,11 @@ export const menu = [
     Icon: SlTrophy,
   },
   {
+    name: 'Blog',
+    slug: '/blog',
+    Icon: TfiPencilAlt,
+  },
+  {
     name: 'Contact',
     slug: '/contact',
     Icon: SlEnvolope,
@@ -57,6 +74,11 @@ export const social = [
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/in/usama-nadeem-853749269/',
     Icon: IoLogoLinkedin,
+  },
+  {
+    name: 'WhatsApp',
+    url: whatsapp.url,
+    Icon: IoLogoWhatsapp,
   },
 ]
 

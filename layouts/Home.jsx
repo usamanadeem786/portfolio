@@ -9,8 +9,8 @@ import Companies from '@/components/Companies'
 import ProjectCardFeatured from '@/components/ProjectCardFeatured'
 import RepositoryCardFeatured from '@/components/RepositoryCardFeatured'
 import { SlUser, SlTrophy, SlEnvolope } from 'react-icons/sl'
-import { IoMailOutline } from 'react-icons/io5'
-import { social, siteMetaData } from '../theme.config'
+import { IoMailOutline, IoLogoWhatsapp } from 'react-icons/io5'
+import { social, siteMetaData, whatsapp } from '../theme.config'
 
 const HeroPhoto = ({ main }) => (
   <>
@@ -172,18 +172,30 @@ const ClosingCta = ({ closing }) => {
           </div>
           <div className="flex shrink-0 flex-col items-start gap-4 md:items-end">
             <div className="flex gap-3">
-              {[...social].reverse().map(({ name, url, Icon }) => (
-                <a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label={name}
-                  className="flex h-11 w-11 items-center justify-center bg-omega-800 text-white transition-colors hover:bg-omega-700"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
+              {['LinkedIn', 'GitHub']
+                .map((name) => social.find((item) => item.name === name))
+                .filter(Boolean)
+                .map(({ name, url, Icon }) => (
+                  <a
+                    key={name}
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={name}
+                    className="flex h-11 w-11 items-center justify-center bg-omega-800 text-white transition-colors hover:bg-omega-700"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                ))}
+              <a
+                href={whatsapp.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="WhatsApp"
+                className="flex h-11 w-11 items-center justify-center bg-beta text-white transition-colors hover:bg-beta-600"
+              >
+                <IoLogoWhatsapp className="h-5 w-5" />
+              </a>
               <a
                 href={`mailto:${siteMetaData.email}`}
                 aria-label="Email"
