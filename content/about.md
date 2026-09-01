@@ -31,7 +31,7 @@ My preferred technology stack includes Python, FastAPI, Django, Django REST Fram
 I am currently open to Software Engineering, Backend Development, Python Development, and AI-related opportunities.
 
 <Button href="/contact">
-  Get a Free Price Quote
+  Let’s Work Together
 </Button>
 
 
