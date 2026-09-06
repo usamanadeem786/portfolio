@@ -78,6 +78,8 @@ class GRUPredictor(nn.Module):
 
 Fewer parameters per cell, fewer matrix multiplications per step. The practical tradeoff is well established in the literature and worth stating plainly instead of pretending there's a universal winner: GRU tends to train faster and needs less data to reach a reasonable result, which makes it the more forgiving choice for smaller or personal datasets. LSTM's extra capacity tends to pay off more clearly on longer sequences and larger corpora, where the separate cell state has more to actually remember. If you're not sure which fits your dataset, that asymmetry — GRU as the safer default for small data, LSTM worth trying once you have more of it — is a reasonable way to decide instead of guessing.
 
+That said, "tends to" is doing real work in that sentence — see the actual measured results below, where GRU didn't train faster at all.
+
 ### Training loop essentials
 
 The architecture is the easy 20%. Getting a next-token predictor to train well is mostly about a few unglamorous details:
@@ -110,6 +112,19 @@ A generic text predictor trained on a huge public corpus learns the statistics o
 - **Regularize harder.** A small, personal dataset overfits fast. More dropout, fewer parameters, and early stopping based on a held-out validation slice matter more here than in the large-corpus case.
 - **Treat the data as sensitive by default.** Personal writing is about as identifying as data gets. Train and serve on-device where possible, encrypt anything stored server-side, and don't fold a user's personal fine-tuning data into any shared or future training set without clear, explicit consent — this is a case where the privacy design isn't a compliance checkbox, it's central to whether the product should exist in the current form at all.
 
+### Real Results From an Actual Implementation
+
+Everything above is the theory, and theory is where this article originally stopped — I hadn't trained the comparison myself yet. I have now: a full LSTM/GRU next-word prediction pipeline (Keras/TensorFlow, not the PyTorch sketched above — the architecture is the same idea, different framework), trained on the DailyDialog conversational dataset, with both models run to completion under identical conditions so the numbers are actually comparable.
+
+| Metric | LSTM | GRU |
+|---|---:|---:|
+| Test Accuracy | 21.78% | 22.36% |
+| Test Loss | 4.5958 | 4.4666 |
+| Validation Perplexity | 99.25 | 87.23 |
+| Training Time | 3.56 hours | 4.05 hours |
+
+GRU came out slightly ahead on both accuracy and perplexity — and took *longer* to train, not shorter. That directly contradicts the "GRU trains faster" heuristic stated earlier as a general tendency, on this exact dataset and setup. Neither result invalidates the other: the heuristic is still a reasonable prior for picking a starting point, but this run is the concrete reminder of why "measure it yourself" was the actual advice, not "GRU wins by default." Full code, the trained models, and the Streamlit comparison interface are on [GitHub](https://github.com/usamanadeem786/next-word-predition), and the project is also written up as a [case study](/projects/lstm-gru-next-word-prediction) with more detail on the pipeline.
+
 ### The honest summary
 
-LSTM and GRU aren't obsolete for this — for a small, personalized, resource-constrained predictor, they're often the *more* appropriate choice than reaching for a large transformer, precisely because they need less data and less compute to reach a usable result. The architecture is genuinely the easy part. The dataset size, the fine-tuning strategy, and the privacy handling are where a "personalized" version of this system is actually won or lost.
+LSTM and GRU aren't obsolete for this — for a small, personalized, resource-constrained predictor, they're often the *more* appropriate choice than reaching for a large transformer, precisely because they need less data and less compute to reach a usable result. The architecture is genuinely the easy part. The dataset size, the fine-tuning strategy, and the privacy handling are where a "personalized" version of this system is actually won or lost — and where the numbers don't match the textbook heuristic, that's worth trusting the numbers.
