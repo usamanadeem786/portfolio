@@ -94,9 +94,14 @@ const FeaturedProjects = ({ companies, projects }) => {
       >
         <ContentRenderer source={companies} />
       </Reveal>
-      <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-12 md:gap-6 lg:grid-cols-3">
         {projects.collection.records.map((item, i) => (
-          <Reveal key={item.slug.join('/')} animation="fade-in slide-in-top" delay={i * 100}>
+          <Reveal
+            key={item.slug.join('/')}
+            animation="fade-in slide-in-top"
+            delay={i * 100}
+            className="h-full"
+          >
             <ProjectCardFeatured index={i} {...item} />
           </Reveal>
         ))}

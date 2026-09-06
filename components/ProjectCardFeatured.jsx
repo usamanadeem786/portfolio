@@ -19,7 +19,7 @@ const ProjectCardFeatured = ({
 }) => (
   <div
     className={classNames(
-      'group prose prose-zinc flex flex-col overflow-hidden',
+      'group prose prose-zinc flex h-full flex-col overflow-hidden',
       'dark:bg-gradient-omega-900 dark:prose-invert dark:shadow-lg',
       className
     )}
@@ -49,8 +49,8 @@ const ProjectCardFeatured = ({
     )}
     <div className="flex grow flex-col p-5">
       {tags && (
-        <div className="mb-3 space-x-1 space-y-1">
-          {tags.map((tag) => {
+        <div className="mb-3 h-[26px] space-x-1 space-y-1 overflow-hidden">
+          {tags.slice(0, 3).map((tag) => {
             const label = typeof tag === 'string' ? tag : tag.title
             const tagSlug = typeof tag === 'string' ? undefined : tag.slug
             return (
@@ -59,14 +59,32 @@ const ProjectCardFeatured = ({
               </Tag>
             )
           })}
+          {tags.length > 3 && (
+            <Tag className="m-0.5 font-mono text-xs lg:mr-2">+{tags.length - 3}</Tag>
+          )}
         </div>
       )}
       <Link href={slug.join('/')} aria-label={title}>
-        <h5 className="mb-2 transition-colors group-hover:text-accent dark:group-hover:text-alpha">
+        <h5
+          className={classNames(
+            'mb-2 min-h-[2.4em] overflow-hidden transition-colors',
+            'group-hover:text-accent dark:group-hover:text-alpha',
+            '[-webkit-box-orient:vertical] [-webkit-line-clamp:2] [display:-webkit-box]'
+          )}
+        >
           {title}
         </h5>
       </Link>
-      {description && <small className="mb-4 block text-omega-400">{description}</small>}
+      {description && (
+        <small
+          className={classNames(
+            'mb-4 block min-h-[3.6em] overflow-hidden text-omega-400',
+            '[-webkit-box-orient:vertical] [-webkit-line-clamp:3] [display:-webkit-box]'
+          )}
+        >
+          {description}
+        </small>
+      )}
       <div className="mt-auto flex items-center justify-between gap-2 pt-4 text-sm">
         {date && (
           <div className="text-omega-500">
