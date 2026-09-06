@@ -25,9 +25,11 @@ const Layout = ({ pagination, collection, slug, content, categories }) => {
               <div className="p-3 md:p-6 lg:p-12">
                 <ContentRenderer source={categories} />
                 <div className="mt-4 grid gap-2 lg:grid-cols-2">
-                  {categories?.collection?.records?.map((tag) => (
-                    <TagCard key={tag.title} {...tag} />
-                  ))}
+                  {categories?.collection?.records
+                    ?.filter((tag) => tag.collection?.totalRecords > 0)
+                    .map((tag) => (
+                      <TagCard key={tag.title} {...tag} />
+                    ))}
                 </div>
               </div>
               <Reveal

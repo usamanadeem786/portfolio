@@ -5,6 +5,15 @@ seo:
   description: Backend, AI, and automation projects by Usama Bin Nadeem — Python software engineering work including REST APIs, computer vision, and Django applications — plus his open-source work on GitHub.
 ---
 
+---categories
+---
+
+### Categories
+
+<small>Browse projects by technology below.</small>
+
+
+
 ---github
 repositories:
   - usamanadeem786/Gender-Detection-master
