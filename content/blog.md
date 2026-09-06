@@ -1,8 +1,8 @@
 ---
 layout: Blog
 seo:
-  title: Blog
-  description: Articles by Usama Bin Nadeem on Python, backend development, AI-assisted engineering, and software development.
+  title: Blog — Python, Backend & AI Engineering
+  description: Articles by Usama Bin Nadeem, a Python software engineer, on backend development, FastAPI, AI-assisted engineering, and automation.
 collection:
   path: /blog
   sortBy: date
@@ -10,7 +10,7 @@ collection:
   infinitePaging: true
 ---
 
-### Latest Articles
+# Latest Articles
 
 Thoughts and write-ups on backend development, Python, and AI-assisted engineering.
 

@@ -20,8 +20,11 @@ export async function getStaticProps({ params }) {
 
   let page = await getPageBySlug(slug)
 
+  // A genuinely missing page must return a real HTTP 404, not silently
+  // render the not-found content with a 200 status (a "soft 404" that
+  // confuses search engines and dilutes crawl budget).
   if (!page) {
-    page = await getPageBySlug(['not-found'])
+    return { notFound: true }
   }
 
   const props = { page }
@@ -65,7 +68,13 @@ export async function getStaticPaths() {
     },
   }))
 
-  return { paths, fallback: true }
+  // 'blocking' (not `true`) matters here: for an *optional* catch-all route,
+  // the root path ("/") and the generic fallback shell are the same file on
+  // disk, so `fallback: true` silently serves the homepage's own HTML for
+  // any unrecognized URL instead of ever resolving to a real 404.
+  // 'blocking' skips the static fallback shell and renders on demand,
+  // so getStaticProps' `notFound: true` reaches the client correctly.
+  return { paths, fallback: 'blocking' }
 }
 
 export default function Page({ pagination, page = {} }) {

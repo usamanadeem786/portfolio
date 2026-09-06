@@ -1,8 +1,8 @@
 ---
 layout: Projects
 seo:
-  title: Projects
-  description: A selection of backend, AI, and automation projects by Usama Bin Nadeem, along with his open-source work on GitHub.
+  title: Python & Backend Development Projects
+  description: Backend, AI, and automation projects by Usama Bin Nadeem — Python software engineering work including REST APIs, computer vision, and Django applications — plus his open-source work on GitHub.
 ---
 
 ---github
@@ -13,7 +13,7 @@ repositories:
 ---
 
 <PageTitle>
-  ### My Open-Source Projects
+  # My Open-Source Projects
 </PageTitle>
 
 Discover my most popular open-source projects on Github.
@@ -27,5 +27,5 @@ collection:
 ---
 
 <PageTitle>
-  ### Client Projects
+  ## Client Projects
 </PageTitle>

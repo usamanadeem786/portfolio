@@ -1,8 +1,8 @@
 ---
 layout: Services
 seo:
-  title: Software Development Services
-  description: Backend development, AI-powered applications, automation, and e-commerce customization services from Usama Bin Nadeem, a Python and backend software engineer.
+  title: Software Engineering Services — Python, Backend & AI
+  description: Backend development, REST APIs, AI-powered applications, automation, and web scraping services from Usama Bin Nadeem, a Python software engineer working with FastAPI and Django.
 ---
 
 
@@ -11,7 +11,7 @@ seo:
 ---
 
 <PageTitle>
-  ### Services
+  # Services
 
   ### _My Expertise_
 </PageTitle>

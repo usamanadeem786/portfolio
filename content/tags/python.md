@@ -15,6 +15,6 @@ collection:
         - python
 ---
 
-### Python Articles
+# Python Articles
 
 Backend development, APIs, and automation with Python.

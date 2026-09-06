@@ -15,6 +15,6 @@ collection:
         - ai
 ---
 
-### AI Articles
+# AI Articles
 
 AI-assisted engineering and AI-powered application development.

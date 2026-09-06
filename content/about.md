@@ -9,6 +9,9 @@ seo:
 
 ---personal_info
 name: Usama Bin Nadeem
+images:
+  - src: /hero.jpg
+    alt: Usama Bin Nadeem, Software Engineer specializing in Python and backend development
 ---
 ##### <span>01.</span> About me
 

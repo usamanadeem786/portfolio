@@ -1,8 +1,8 @@
 ---
 layout: Contact
 seo:
-  title: Contact Me
-  description: Get in touch with Usama Bin Nadeem for backend development, AI, and automation projects. Reach out by email, phone, LinkedIn, or GitHub.
+  title: Contact | Python & Backend Software Engineer
+  description: Get in touch with Usama Bin Nadeem, a Python and backend software engineer, for backend development, AI, and automation projects. Reach out by email, WhatsApp, LinkedIn, or GitHub.
 ---
 
 
@@ -11,7 +11,7 @@ seo:
 ---
 
 <PageTitle>
-  ### Get in touch
+  # Get in Touch
 
   ### _Let's talk about your project_
 </PageTitle>

@@ -125,18 +125,24 @@ export const mdxConfig = {
  */
 
 export const siteMetaData = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL || 'http://localhost:3000',
+  // Falls back to the production domain so canonical URLs, sitemap.xml, and
+  // Open Graph tags are never silently wrong if NEXT_PUBLIC_SITE_URL isn't
+  // set on the hosting provider — see NEXT_PUBLIC_SITE_URL in the deploy env.
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
+    'https://usamadev.company',
   authorName: 'Usama Bin Nadeem',
   siteName: 'Usama Bin Nadeem',
-  defaultTitle: 'Usama Bin Nadeem Personal Site',
+  defaultTitle: 'Usama Bin Nadeem | Software Engineer — Python, Backend & AI',
   titleTemplate: 'Usama Bin Nadeem | %s',
   description:
-    'Portfolio of Usama Nadeem, a Python Developer specializing in FastAPI, Django, Flask, web scraping, automation, AI, and custom software solutions.',
+    'Usama Bin Nadeem is a Software Engineer specializing in Python, backend development, FastAPI, Django, AI/ML, and automation — building REST APIs and scalable software solutions.',
   email: 'usamanadeem7866@gmail.com',
   locale: 'en_US',
   twitter: {
     handle: '@usamanadeem786',
-    site: '@site',
+    site: '@usamanadeem786',
     cardType: 'summary_large_image',
   },
 }

@@ -1,21 +1,21 @@
 ---
 layout: Home
 seo:
-  title: Usama Nadeem | Web Developer
-  description: Portfolio of Usama Nadeem, a Python Developer specializing in FastAPI, Django, Flask, web scraping, automation, AI, and custom software solutions.
+  title: Software Engineer | Python, Backend & AI
+  description: Usama Bin Nadeem is a Software Engineer specializing in Python, backend development, FastAPI, Django, REST APIs, and AI/ML — building scalable software and automation solutions.
 ---
 
 ---main
 images:
   - src: /hero.jpg
-    alt: my photo
+    alt: Usama Bin Nadeem, Software Engineer specializing in Python and backend development
   - src: /hero-mobile.jpg
-    alt: my photo
+    alt: Usama Bin Nadeem, Software Engineer specializing in Python and backend development
 ---
 
-# <Typewriter>Usama Bin Nadeem</Typewriter>
+<div className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"><Typewriter>Usama Bin Nadeem</Typewriter></div>
 
-# *Web Developer* <span>&</span> *Backend Developer*
+# *Software Engineer* specializing in Python, *Backend* <span>&</span> *AI*
 
 <Sep size={12} />
 

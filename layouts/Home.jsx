@@ -68,16 +68,16 @@ const Achievements = ({ achievements }) => (
         key={i}
         className="flex flex-1 flex-col items-center justify-center px-1 py-4 md:flex-row md:justify-start md:p-6"
       >
-        <h2
+        <div
           className={classNames(
-            'm-0 md:pr-4',
+            'text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl m-0 md:pr-4',
             i === 0 && 'text-accent',
             i === 1 && 'text-beta',
             i >= 2 && 'text-alpha'
           )}
         >
           {item.number}
-        </h2>
+        </div>
         <div className="text-white">{item.text}</div>
       </div>
     ))}

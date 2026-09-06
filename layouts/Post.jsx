@@ -1,6 +1,5 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { ArticleJsonLd } from 'next-seo'
 import ContentRenderer from '@/components/ContentRenderer'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
@@ -16,27 +15,17 @@ const SocialShare = dynamic(() => import('@/components/SocialShare'))
 const Layout = ({
   content,
   title,
-  description,
   date,
-  seo = {},
   tags = [],
   images = [],
   attributes = [],
+  readingTime,
   pageUrl,
 }) => {
-  const { siteUrl, authorName } = siteMetaData || {}
+  const { authorName } = siteMetaData || {}
 
   return (
     <>
-      <ArticleJsonLd
-        type="BlogPosting"
-        url={pageUrl}
-        title={title}
-        images={images.map((img) => siteUrl + img.src)}
-        datePublished={date}
-        authorName={authorName}
-        description={seo?.description || description}
-      />
       <div className="relative mx-auto my-auto w-full p-4 pb-20 lg:p-20">
         <div className="prose prose-invert">
           <header className="mx-auto max-w-3xl space-y-10 text-center">
@@ -64,6 +53,9 @@ const Layout = ({
               </div>
               <div className="basis-1/3 text-left">
                 <Date date={date} />
+                {readingTime && (
+                  <span className="text-omega-400"> &middot; {readingTime} min read</span>
+                )}
               </div>
             </div>
           </header>
