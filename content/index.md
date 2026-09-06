@@ -74,24 +74,6 @@ collection:
   View All Projects
 </Button>
 
----githubTitle
----
-
-## My *Open-Source* Projects
-
-Discover some of my most popular open-source projects on GitHub. Click any project to view the source code directly on the repository.
-
----github
-repositories:
-  - usamanadeem786/Gender-Detection-master
-  - usamanadeem786/Blogging-app
-  - usamanadeem786/ACI-Main
----
-
-<Button href="https://github.com/usamanadeem786" variant="secondary" size="lg">
-  View GitHub Profile
-</Button>
-
 ---closing
 ---
 

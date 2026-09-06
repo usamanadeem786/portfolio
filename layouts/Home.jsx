@@ -7,7 +7,6 @@ import Sep from '@/components/Sep'
 import Reveal from '@/components/Reveal'
 import Companies from '@/components/Companies'
 import ProjectCardFeatured from '@/components/ProjectCardFeatured'
-import RepositoryCardFeatured from '@/components/RepositoryCardFeatured'
 import { SlUser, SlTrophy, SlEnvolope } from 'react-icons/sl'
 import { IoMailOutline, IoLogoWhatsapp } from 'react-icons/io5'
 import { social, siteMetaData, whatsapp } from '../theme.config'
@@ -109,35 +108,6 @@ const FeaturedProjects = ({ companies, projects }) => {
   )
 }
 
-const OpenSourceProjects = ({ githubTitle, github }) => {
-  if (!github?.repositories?.records?.length) return null
-
-  return (
-    <div className="mt-16 md:mt-24">
-      <Reveal
-        animation="fade-in slide-in-top"
-        className="prose prose-invert mx-auto max-w-2xl text-center"
-      >
-        <ContentRenderer source={githubTitle} />
-      </Reveal>
-      <div className="mt-8 grid grid-cols-fluid gap-4 [--tw-fluid-col-min:16rem] md:mt-12 md:gap-6">
-        {github.repositories.records.map((item, i) => (
-          <Reveal
-            key={`${item.owner}/${item.name}`}
-            animation="fade-in slide-in-top"
-            delay={i * 100}
-          >
-            <RepositoryCardFeatured index={i} {...item} />
-          </Reveal>
-        ))}
-      </div>
-      <div className="prose prose-invert mt-8 text-center md:mt-12">
-        <ContentRenderer source={github} />
-      </div>
-    </div>
-  )
-}
-
 const quickLinks = [
   { name: 'About Me', href: '/about', Icon: SlUser },
   { name: 'Projects', href: '/projects', Icon: SlTrophy },
@@ -220,8 +190,6 @@ const Layout = ({
   achievements = [],
   companies,
   projects,
-  githubTitle,
-  github,
   closing,
 }) => (
   <div className="mx-auto my-auto w-full min-w-0 p-4 md:p-10 lg:p-20">
@@ -241,7 +209,6 @@ const Layout = ({
       <Companies {...companies} />
     </div>
     <FeaturedProjects companies={companies} projects={projects} />
-    <OpenSourceProjects githubTitle={githubTitle} github={github} />
     <ClosingCta closing={closing} />
   </div>
 )
