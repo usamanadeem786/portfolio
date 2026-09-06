@@ -7,6 +7,20 @@ class MyDocument extends Document {
       <Html lang={config.dateLocale} className="relative scroll-smooth antialiased">
         <Head>
           <meta name="theme-color" content="#27272a" />
+          {/* Set these in your host's env vars once you have the codes from
+              Search Console / Bing Webmaster Tools — no code change needed. */}
+          {process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && (
+            <meta
+              name="google-site-verification"
+              content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}
+            />
+          )}
+          {process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION && (
+            <meta
+              name="msvalidate.01"
+              content={process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION}
+            />
+          )}
           <link rel="icon" href="/favicon/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
