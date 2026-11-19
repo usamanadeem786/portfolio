@@ -1,42 +1,16 @@
 ---
 layout: Services
 seo:
-  title: Software Engineering Services — Python, Backend & AI
-  description: Backend development, REST APIs, AI-powered applications, automation, and web scraping services from Usama Bin Nadeem, a Python software engineer working with FastAPI and Django.
+  title: Website Development, Backend Engineering & Automation
+  description: Explore WordPress, Shopify and custom website development, plus Python backend engineering, AI, automation and web scraping services by Usama Bin Nadeem.
 ---
-
-
 
 ---main
 ---
 
-<PageTitle>
-  # Services
+# Website & software development services
 
-  ### _My Expertise_
-</PageTitle>
-
-###### Solving problems
-
-I help businesses turn ideas into reliable, production-ready software. From backend systems and APIs to AI-powered tools and automation, I focus on solutions that are scalable, maintainable, and built to deliver real value.
-
-###### What you can expect
-
-- Clean, well-tested, maintainable code
-- Clear communication throughout the project
-- Solutions built around your actual business needs
-
-<Sep size="12" />
-
-<Button href="/contact" variant="white" size="sm">
-  Get Free Price Quote
-</Button>
-
-<Button href="/services/website-development" variant="white" size="sm">
-  Explore Website Services & Pricing
-</Button>
-
-
+I build websites, backend systems and automation tools for businesses. Explore the services below to see what fits your project.
 
 ---services[0]
 title: Backend Development & APIs
@@ -44,16 +18,11 @@ icon:
   src: /icons/python.svg
 ---
 
-<small>
-  Scalable backend systems and RESTful APIs built with Python, FastAPI, Django, and Flask, backed by PostgreSQL or MySQL.
+Build or extend your backend with Python, FastAPI, Django or Flask.
 
-    - <strong>REST API Design & Development</strong>
-    - <strong>Database Design & Optimization</strong>
-    - <strong>Authentication & Authorization Systems</strong>
-
-</small>
-
-
+- REST API development
+- Database design and optimisation
+- Authentication and permissions
 
 ---services[1]
 title: AI & Automation Solutions
@@ -61,16 +30,11 @@ icon:
   src: /icons/fastapi.svg
 ---
 
-<small>
-  AI-powered applications and business automation tools that cut down manual work and add intelligence to your product.
+Connect AI tools to your product and automate repetitive business tasks.
 
-    - <strong>AI Chatbots & Assistants</strong>
-    - <strong>Machine Learning Integrations</strong>
-    - <strong>Business Process Automation</strong>
-
-</small>
-
-
+- AI assistants and chatbots
+- Machine learning integrations
+- Business process automation
 
 ---services[2]
 title: Web Scraping & Data Solutions
@@ -78,28 +42,15 @@ icon:
   src: /icons/selenium.svg
 ---
 
-<small>
-  Reliable data extraction and processing pipelines for research, monitoring, and lead-generation use cases.
+Collect and organise data for research, monitoring or internal workflows.
 
-    - <strong>Web Scraping with Selenium & BeautifulSoup</strong>
-    - <strong>Email Verification Systems</strong>
-    - <strong>Data Cleaning & Processing Pipelines</strong>
-</small>
-
-
+- Web scraping with Selenium and Beautiful Soup
+- Email verification systems
+- Data cleaning and processing pipelines
 
 ---services[3]
 title: Website Development
-icon:
-  src: /icons/shopify.svg
+href: /services/website-development
 ---
 
-<small>
-  Branded WordPress websites, Shopify stores, and custom web development chosen around your business goals.
-
-  - <strong>WordPress Business Websites</strong>
-  - <strong>Shopify Stores</strong>
-  - <strong>Custom Websites & Applications</strong>
-
-  [Explore website services, pricing and terms](/services/website-development)
-</small>
+WordPress websites, Shopify stores and custom web applications. Compare project scope and pricing, from a simple business website to a custom client portal.

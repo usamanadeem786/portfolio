@@ -1,38 +1,56 @@
-import React from 'react'
 import ContentRenderer from '@/components/ContentRenderer'
-import Reveal from '@/components/Reveal'
 import Icon from '@/components/Icon'
+import ServiceAction from '@/components/ServiceAction'
 
-const Services01 = ({ main = {}, services = [] }) => (
-  <div className="mx-auto my-auto p-3 md:p-6 lg:p-12">
-    <div className="flex flex-col items-center">
-      <div className="grid gap-4 md:grid-cols-3 md:gap-12">
-        <div className="col-span-1 row-span-2 mb-6 md:m-0">
-          <Reveal animation="fade-in slide-in-right" className="prose prose-invert" delay={200}>
-            <ContentRenderer source={main} />
-          </Reveal>
-        </div>
-        {services?.map((item, i) => (
-          <Reveal
-            animation="fade-in zoom-in"
-            className="prose bg-white"
-            delay={(i % 2) * 100}
-            key={i}
-          >
-            <div className="align-center flex flex-col bg-gradient-to-br from-alpha-100 via-alpha to-beta p-8">
+export default function Services({ main, services = [] }) {
+  const website = services.find((service) => service.href)
+  const engineering = services.filter((service) => !service.href)
+
+  return (
+    <div className="w-full max-w-6xl px-5 py-10 text-omega-200 sm:px-8 md:py-16 lg:px-12">
+      <header className="prose prose-invert mb-8 max-w-3xl md:mb-10">
+        <ContentRenderer source={main} />
+      </header>
+
+      {website && (
+        <section className="mb-12 grid gap-6 rounded-3xl border border-omega-600 bg-gradient-to-br from-alpha/10 via-omega-800 to-omega-900 p-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:p-9">
+          <div>
+            <h2 className="mb-3 text-3xl text-white">{website.title}</h2>
+            <div className="prose prose-invert max-w-xl">
+              <ContentRenderer source={website} />
+            </div>
+          </div>
+          <ServiceAction href={website.href}>View website services and pricing</ServiceAction>
+        </section>
+      )}
+
+      <section aria-labelledby="engineering-services">
+        <h2 id="engineering-services" className="mb-6 text-3xl text-white">
+          Software engineering services
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {engineering.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-omega-700 bg-omega-800/60 p-6"
+            >
               {item.icon && (
-                <Icon {...item.icon} className="relative z-10 mb-6 h-12 w-12 fill-accent" />
+                <Icon {...item.icon} aria-hidden="true" className="mb-4 h-9 w-9 fill-alpha" />
               )}
-              <h4 className="relative z-10 m-0">{item.title}</h4>
-            </div>
-            <div className="p-8 pt-3">
-              <ContentRenderer source={item} />
-            </div>
-          </Reveal>
-        ))}
+              <h3 className="mb-3 text-xl font-semibold text-white">{item.title}</h3>
+              <div className="prose prose-invert">
+                <ContentRenderer source={item} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-omega-700 pt-7">
+        <p>Have a project in mind? Share what you need and I’ll help define the scope.</p>
+        <ServiceAction href="/contact" secondary className="w-full sm:w-auto">
+          Request a project quote
+        </ServiceAction>
       </div>
     </div>
-  </div>
-)
-
-export default Services01
+  )
+}
