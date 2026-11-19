@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import classNames from 'clsx'
 import { useForm, FormProvider } from 'react-hook-form'
 import ContentRenderer from '@/components/ContentRenderer'
@@ -33,21 +34,31 @@ const SuccessMessage = () => (
       <div className="max-w-md text-center">
         <SlCheck className="mx-auto text-5xl text-alpha" />
         <h5>Thank you for contacting me.</h5>
-        <p>I will get back to you as soon as possible.</p>
+        <p>I aim to get back to you within two business days.</p>
       </div>
     </div>
   </Reveal>
 )
 
 const Contact01 = ({ main = {} }) => {
+  const router = useRouter()
+  const [submitted, setSubmitted] = React.useState(false)
   const methods = useForm()
   const {
     register,
-    formState: { errors, isValidating, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isValidating, isSubmitting },
     handleSubmit,
     setError,
     clearErrors,
+    setValue,
   } = methods
+
+  React.useEffect(() => {
+    const allowedServices = ['wordpress', 'shopify', 'custom-website', 'web-application']
+    if (allowedServices.includes(router.query.service)) {
+      setValue('service', router.query.service)
+    }
+  }, [router.query.service, setValue])
 
   const onSubmit = async (data) => {
     try {
@@ -60,22 +71,24 @@ const Contact01 = ({ main = {} }) => {
         },
       })
       if (res.status === 201) {
-        return true
+        setSubmitted(true)
+        return
       }
       const json = await res.json()
-      if (json.error) {
-        throw json.error
-      }
+      throw new Error(json.error || 'Could not send your enquiry. Please try again.')
     } catch (error) {
-      setError('service', { type: 'serviceSideError', message: error })
+      setError('formError', {
+        type: 'server',
+        message: error.message || 'Could not send your enquiry.',
+      })
     }
   }
 
   React.useEffect(() => {
-    if (errors.service && isValidating) {
-      clearErrors('service')
+    if (errors.formError && isValidating) {
+      clearErrors('formError')
     }
-  }, [isValidating, errors.service, clearErrors])
+  }, [isValidating, errors.formError, clearErrors])
 
   return (
     <div className="my-auto p-3 md:p-6 lg:p-12">
@@ -93,7 +106,7 @@ const Contact01 = ({ main = {} }) => {
           <FormProvider {...methods}>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="relative overflow-hidden shadow">
-                {isSubmitSuccessful && <SuccessMessage />}
+                {submitted && <SuccessMessage />}
                 <div className="bg-gradient-omega-900">
                   {inputs?.map(({ legend, columns, fields }, i) => (
                     <fieldset key={i} className="border-b border-dashed border-omega-700">
@@ -109,7 +122,7 @@ const Contact01 = ({ main = {} }) => {
                         {fields.map((input, j) => {
                           const Component = FormComponent[input.type]
                           return input.type && Component ? (
-                            <div key={(input.id || input.name) + j} className="flex items-center">
+                            <div key={(input.id || input.name) + j} className="w-full">
                               <Component {...input} {...register(input.id || input.name)} />
                             </div>
                           ) : null
@@ -119,7 +132,7 @@ const Contact01 = ({ main = {} }) => {
                   ))}
                 </div>
                 <div className="bg-omega-900 px-4 pt-6 pb-8 text-left md:px-8">
-                  <ErrorMessage errors={errors} name="service" />
+                  <ErrorMessage errors={errors} name="formError" />
                   <Button
                     as="button"
                     type="submit"
@@ -127,7 +140,7 @@ const Contact01 = ({ main = {} }) => {
                     className="w-full sm:w-1/3"
                     disabled={isSubmitting}
                   >
-                    Submit
+                    Send project enquiry
                   </Button>
                 </div>
               </div>

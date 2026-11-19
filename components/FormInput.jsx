@@ -31,7 +31,7 @@ const FormInput = React.forwardRef((props, ref) => {
       <Component
         type={inputType || type}
         ref={ref}
-        id={id}
+        id={id || name}
         name={name}
         autoComplete={autoComplete}
         className={classNames(

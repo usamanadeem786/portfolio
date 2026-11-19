@@ -1,198 +1,63 @@
 [
   {
-    "legend": "Your contact information",
-    "columns": 3,
+    "legend": "Your details",
+    "columns": 2,
+    "fields": [
+      { "type": "text", "name": "first-name", "label": "First name", "autoComplete": "given-name", "required": true },
+      { "type": "text", "name": "last-name", "label": "Last name", "autoComplete": "family-name", "required": true },
+      { "type": "text", "name": "email", "label": "Email address", "inputType": "email", "autoComplete": "email", "required": true },
+      { "type": "text", "name": "company", "label": "Company or organisation (optional)", "autoComplete": "organization" }
+    ]
+  },
+  {
+    "legend": "Your project",
+    "columns": 2,
     "fields": [
       {
-        "type": "text",
-        "name": "first-name",
-        "placeholder": "First name",
-        "autoComplete": "given-name",
-        "required": true
-      },
-      {
-        "type": "text",
-        "name": "last-name",
-        "placeholder": "Last name",
-        "autoComplete": "family-name",
-        "required": true
-      },
-      {
-        "type": "text",
-        "name": "email",
-        "placeholder": "Email address",
-        "autoComplete": "email",
-        "inputType": "email",
-        "required": true
-      },
-      {
-        "type": "text",
-        "name": "company",
-        "placeholder": "Company Name",
-        "autoComplete": "company"
-      },
-      {
-        "type": "text",
-        "name": "phone",
-        "placeholder": "Phone Number",
-        "autoComplete": "phone"
+        "type": "select",
+        "name": "service",
+        "label": "What can I help you with?",
+        "required": true,
+        "options": [
+          { "label": "Select a service", "value": "", "disabled": true },
+          { "label": "WordPress website", "value": "wordpress" },
+          { "label": "Shopify store", "value": "shopify" },
+          { "label": "Custom website", "value": "custom-website" },
+          { "label": "Custom web application", "value": "web-application" },
+          { "label": "Backend, AI or automation", "value": "backend-ai-automation" },
+          { "label": "Career opportunity or collaboration", "value": "career" },
+          { "label": "Something else", "value": "other" }
+        ]
       },
       {
         "type": "select",
-        "name": "country",
-        "autoComplete": "country-name",
-        "defaultValue": "Select Country",
+        "name": "budget",
+        "label": "Approximate budget (optional)",
         "options": [
-          {
-            "label": "Select Country",
-            "value": "",
-            "disabled": true
-          },
-          {
-            "label": "Malaysia",
-            "value": "Malaysia"
-          },
-          {
-            "label": "Pakistan",
-            "value": "Pakistan"
-          },
-          {
-            "label": "United Kingdom",
-            "value": "United Kingdom"
-          },
-          {
-            "label": "United States",
-            "value": "United States"
-          },
-          {
-            "label": "Canada",
-            "value": "Canada"
-          },
-          {
-            "label": "Germany",
-            "value": "Germany"
-          },
-          {
-            "label": "France",
-            "value": "France"
-          },
-          {
-            "label": "Other",
-            "value": "Other"
-          }
+          { "label": "Select a range", "value": "" },
+          { "label": "Under £500", "value": "Under £500" },
+          { "label": "£500–£1,000", "value": "£500–£1,000" },
+          { "label": "£1,000–£2,500", "value": "£1,000–£2,500" },
+          { "label": "£2,500–£5,000", "value": "£2,500–£5,000" },
+          { "label": "Over £5,000", "value": "Over £5,000" },
+          { "label": "Not sure yet", "value": "Not sure yet" }
         ]
-      }
+      },
+      { "type": "text", "name": "timeline", "label": "Preferred launch date (optional)", "placeholder": "For example, March 2027" },
+      { "type": "text", "name": "existing-website", "label": "Current website (optional)", "placeholder": "https://example.com", "inputType": "url" }
     ]
   },
   {
-    "legend": "Technologies Required",
-    "columns": 3,
-    "fields": [
-      {
-        "type": "checkbox",
-        "name": "technologies[Python]",
-        "label": "Python"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[FastAPI]",
-        "label": "FastAPI"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Django]",
-        "label": "Django"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Flask]",
-        "label": "Flask"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Streamlit]",
-        "label": "Streamlit"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[PostgreSQL]",
-        "label": "PostgreSQL"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[MySQL]",
-        "label": "MySQL"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[MongoDB]",
-        "label": "MongoDB"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[SQLite]",
-        "label": "SQLite"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[BeautifulSoup / Selenium]",
-        "label": "BeautifulSoup / Selenium"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Shopify]",
-        "label": "Shopify"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Wordpress]",
-        "label": "Wordpress"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[AI / Machine Learning]",
-        "label": "AI / Machine Learning"
-      },
-      {
-        "type": "checkbox",
-        "name": "technologies[Other]",
-        "label": "Other"
-      }
-    ]
-  },
-  {
-    "legend": "Work Location",
-    "columns": 3,
-    "fields": [
-      {
-        "type": "radio",
-        "name": "Work Location",
-        "value": "Onsite",
-        "label": "Onsite"
-      },
-      {
-        "type": "radio",
-        "name": "Work Location",
-        "value": "Remote",
-        "label": "Remote"
-      },
-      {
-        "type": "radio",
-        "name": "Work Location",
-        "value": "Hybrid",
-        "label": "Hybrid"
-      }
-    ]
-  },
-  {
-    "legend": "Tell me about the opportunity, the role, your company, project requirements, technologies, timeline, and anything else you'd like me to know.",
+    "legend": "Project details",
     "columns": 1,
     "fields": [
       {
         "type": "textarea",
         "name": "message",
-        "placeholder": "Job description",
-        "rows": 3
+        "label": "What would you like to build?",
+        "placeholder": "Tell me about your business, pages, must-have features and any websites you like.",
+        "rows": 6,
+        "required": true
       }
     ]
   }

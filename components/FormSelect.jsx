@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'clsx'
 
 const FormSelect = React.forwardRef((props, ref) => {
-  const { label, name, autoComplete, hasError, ...rest } = props
+  const { label, name, autoComplete, hasError, options, ...rest } = props
 
   return (
     <>
@@ -25,7 +25,7 @@ const FormSelect = React.forwardRef((props, ref) => {
         )}
         {...rest}
       >
-        {props.options.map(({ label, ...rest }, i) => (
+        {options.map(({ label, ...rest }, i) => (
           <option className="text-black" key={i} {...rest}>
             {label}
           </option>

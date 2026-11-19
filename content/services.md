@@ -32,6 +32,10 @@ I help businesses turn ideas into reliable, production-ready software. From back
   Get Free Price Quote
 </Button>
 
+<Button href="/services/website-development" variant="white" size="sm">
+  Explore Website Services & Pricing
+</Button>
+
 
 
 ---services[0]
@@ -85,15 +89,17 @@ icon:
 
 
 ---services[3]
-title: E-commerce & CMS Customization
+title: Website Development
 icon:
   src: /icons/shopify.svg
 ---
 
 <small>
-  Custom storefronts, inventory tooling, and CMS work on Shopify and WordPress tailored to how your business actually operates.
+  Branded WordPress websites, Shopify stores, and custom web development chosen around your business goals.
 
-  - <strong>Shopify Theme & App Customization</strong>
-  - <strong>WordPress Development</strong>
-  - <strong>Inventory Management Systems</strong>
+  - <strong>WordPress Business Websites</strong>
+  - <strong>Shopify Stores</strong>
+  - <strong>Custom Websites & Applications</strong>
+
+  [Explore website services, pricing and terms](/services/website-development)
 </small>

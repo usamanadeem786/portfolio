@@ -1,8 +1,8 @@
 ---
 layout: Contact
 seo:
-  title: Contact | Python & Backend Software Engineer
-  description: Get in touch with Usama Bin Nadeem, a Python and backend software engineer, for backend development, AI, and automation projects. Reach out by email, WhatsApp, LinkedIn, or GitHub.
+  title: Contact Usama Bin Nadeem | Website & Software Project Enquiries
+  description: Request a quote for a WordPress website, Shopify store, custom website, backend development or automation project. Share your goals, budget and timeline with Usama Bin Nadeem.
 ---
 
 
@@ -11,14 +11,16 @@ seo:
 ---
 
 <PageTitle>
-  # Get in Touch
+  # Let's build something useful
 
-  ### _Let's talk about your project_
+  ### _Tell me about your project_
 </PageTitle>
 
-I'm always open to discussing new opportunities, freelance projects, and collaborations.
+I help businesses build WordPress websites, Shopify stores, custom applications, backend systems and automation. Tell me what you need and I’ll recommend a suitable approach.
 
-Feel free to reach out using the form below, and I'll respond as soon as I can.
+Share the project goals, any must-have features, an approximate budget and your preferred launch date. You can also use this form for career opportunities and collaborations. I aim to reply within two business days.
+
+[Explore website services, pricing and working terms](/services/website-development)
 
 <Sep size="12" />
 

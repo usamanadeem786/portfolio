@@ -4,6 +4,7 @@ const layouts = {
   About: dynamic(() => import(`@/layouts/About`)),
   Contact: dynamic(() => import(`@/layouts/Contact`)),
   Services: dynamic(() => import(`@/layouts/Services`)),
+  WebsiteDevelopment: dynamic(() => import(`@/layouts/WebsiteDevelopment`)),
   Home: dynamic(() => import(`@/layouts/Home`)),
   'Home-2': dynamic(() => import(`@/layouts/Home-2`)),
   'Home-3': dynamic(() => import(`@/layouts/Home-3`)),
